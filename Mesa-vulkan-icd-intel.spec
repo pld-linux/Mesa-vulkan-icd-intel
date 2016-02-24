@@ -9,7 +9,7 @@
 Summary:	Vulkan driver for Intel GPUs
 Name:		Mesa-vulkan-icd-intel
 Version:	0.s%{snap}
-Release:	2
+Release:	3
 License:	MIT (core) and others - see license.html file
 Group:		X11/Libraries
 # git archive --format=tar --prefix=Mesa-vulkan-s20160220/ vulkan | xz > ../Mesa-vulkan-s20160220.tar.xz
@@ -52,7 +52,8 @@ BuildRequires:	xorg-lib-libXxf86vm-devel
 BuildRequires:	xorg-lib-libxshmfence-devel >= 1.1
 BuildRequires:	xorg-proto-dri3proto-devel >= %{dri3proto_ver}
 BuildRequires:	xorg-util-makedepend
-Requires:	vulkan-loader
+Suggests:	vulkan(loader)
+Provides:	vulkan(icd) = 1.0.3
 ExclusiveArch:	%x8664 x32
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
