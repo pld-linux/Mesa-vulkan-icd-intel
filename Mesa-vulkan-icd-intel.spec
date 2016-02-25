@@ -9,7 +9,7 @@
 Summary:	Vulkan driver for Intel GPUs
 Name:		Mesa-vulkan-icd-intel
 Version:	0.s%{snap}
-Release:	3
+Release:	4
 License:	MIT (core) and others - see license.html file
 Group:		X11/Libraries
 # git archive --format=tar --prefix=Mesa-vulkan-s20160220/ vulkan | xz > ../Mesa-vulkan-s20160220.tar.xz
@@ -114,6 +114,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 icdconfdir=%{_datadir}/vulkan/icd.d \
 	DESTDIR=$RPM_BUILD_ROOT
+
+sed -e's@%{_libdir}/@@' \
+	$RPM_BUILD_ROOT%{_datadir}/vulkan/icd.d/intel_icd.json \
+	> $RPM_BUILD_ROOT%{_datadir}/vulkan/icd.d/Mesa-intel_icd.json
+rm $RPM_BUILD_ROOT%{_datadir}/vulkan/icd.d/intel_icd.json
 
 %clean
 rm -rf $RPM_BUILD_ROOT
