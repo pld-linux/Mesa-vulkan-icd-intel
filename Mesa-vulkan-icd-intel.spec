@@ -5,16 +5,16 @@
 # Conditional build:
 %bcond_without	wayland		# Wayland WSI support
 #
-%define snap	20160220
+%define snap	20160228
 Summary:	Vulkan driver for Intel GPUs
 Name:		Mesa-vulkan-icd-intel
 Version:	0.s%{snap}
-Release:	4
+Release:	1
 License:	MIT (core) and others - see license.html file
 Group:		X11/Libraries
-# git archive --format=tar --prefix=Mesa-vulkan-s20160220/ vulkan | xz > ../Mesa-vulkan-s20160220.tar.xz
+# git archive --format=tar --prefix=Mesa-vulkan-s20160228/ vulkan | xz > ../Mesa-vulkan-s20160228.tar.xz
 Source0:	Mesa-vulkan-s%{snap}.tar.xz
-# Source0-md5:	c17941156b0489023637bc1f8e429452
+# Source0-md5:	631e3e030ae3d6397c2da27def59417a
 Patch0:		keep_git_sha.patch
 URL:		http://www.mesa3d.org/
 BuildRequires:	autoconf >= 2.60
