@@ -120,6 +120,14 @@ sed -e's@%{_libdir}/@@' \
 	> $RPM_BUILD_ROOT%{_datadir}/vulkan/icd.d/Mesa-intel_icd.json
 rm $RPM_BUILD_ROOT%{_datadir}/vulkan/icd.d/intel_icd.json
 
+# remove non-Vulkan files
+rm $RPM_BUILD_ROOT%{_sysconfdir}/drirc
+rm -r $RPM_BUILD_ROOT%{_includedir}/{EGL,GL,KHR}
+rm -r $RPM_BUILD_ROOT%{_includedir}/vulkan/{vk_platform.h,vulkan.h}
+rm $RPM_BUILD_ROOT%{_libdir}/lib{EGL,GL,glapi,wayland-egl}.*
+rm -r $RPM_BUILD_ROOT%{_pkgconfigdir}
+rm -r $RPM_BUILD_ROOT%{_libdir}/xorg
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
