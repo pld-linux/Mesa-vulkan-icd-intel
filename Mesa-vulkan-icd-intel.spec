@@ -9,7 +9,7 @@
 Summary:	Vulkan driver for Intel GPUs
 Name:		Mesa-vulkan-icd-intel
 Version:	0.s%{snap}
-Release:	2
+Release:	3
 License:	MIT (core) and others - see license.html file
 Group:		X11/Libraries
 # git archive --format=tar --prefix=Mesa-vulkan-s20160304/ vulkan | xz > ../Mesa-vulkan-s20160304.tar.xz
