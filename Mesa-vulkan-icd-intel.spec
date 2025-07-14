@@ -70,7 +70,7 @@ Header files for %{name} Intel Vulkan driver.
 
 %prep
 %setup -q -n Mesa-vulkan-s%{snap}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__libtoolize}
